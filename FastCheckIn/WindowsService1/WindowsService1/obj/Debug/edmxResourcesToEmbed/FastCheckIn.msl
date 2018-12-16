@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRSModel1StoreContainer" CdmEntityContainer="CheckInFastEntities">
+    <EntitySetMapping Name="ApplRights">
+      <EntityTypeMapping TypeName="HRSModel1.ApplRight">
+        <MappingFragment StoreEntitySet="ApplRights">
+          <ScalarProperty Name="Right_ID" ColumnName="Right_ID" />
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplSettings">
+      <EntityTypeMapping TypeName="HRSModel1.ApplSetting">
+        <MappingFragment StoreEntitySet="ApplSettings">
+          <ScalarProperty Name="Settings_ID" ColumnName="Settings_ID" />
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplUsers">
+      <EntityTypeMapping TypeName="HRSModel1.ApplUser">
+        <MappingFragment StoreEntitySet="ApplUsers">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditCards">
+      <EntityTypeMapping TypeName="HRSModel1.CreditCard">
+        <MappingFragment StoreEntitySet="CreditCard">
+          <ScalarProperty Name="ID_Guest" ColumnName="ID_Guest" />
+          <ScalarProperty Name="CardNr" ColumnName="CardNr" />
+          <ScalarProperty Name="CardHolder" ColumnName="CardHolder" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CVCCode" ColumnName="CVCCode" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guests">
+      <EntityTypeMapping TypeName="HRSModel1.Guest">
+        <MappingFragment StoreEntitySet="Guest">
+          <ScalarProperty Name="Guest_ID" ColumnName="Guest_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="HRSModel1.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="Hotel_ID" ColumnName="Hotel_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Stars" ColumnName="Stars" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelFeatures">
+      <EntityTypeMapping TypeName="HRSModel1.HotelFeature">
+        <MappingFragment StoreEntitySet="HotelFeature">
+          <ScalarProperty Name="HotelFeature_ID" ColumnName="HotelFeature_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="HRSModel1.Rating">
+        <MappingFragment StoreEntitySet="Rating">
+          <ScalarProperty Name="ID_Reservation" ColumnName="ID_Reservation" />
+          <ScalarProperty Name="ID_Guest" ColumnName="ID_Guest" />
+          <ScalarProperty Name="ID_Room" ColumnName="ID_Room" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Rating1" ColumnName="Rating" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservations">
+      <EntityTypeMapping TypeName="HRSModel1.Reservation">
+        <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="Reservation_ID" ColumnName="Reservation_ID" />
+          <ScalarProperty Name="ID_Room" ColumnName="ID_Room" />
+          <ScalarProperty Name="ID_Guest" ColumnName="ID_Guest" />
+          <ScalarProperty Name="ID_TravelOffice" ColumnName="ID_TravelOffice" />
+          <ScalarProperty Name="ID_Hotel" ColumnName="ID_Hotel" />
+          <ScalarProperty Name="DateCheckIn" ColumnName="DateCheckIn" />
+          <ScalarProperty Name="DataCheckOut" ColumnName="DataCheckOut" />
+          <ScalarProperty Name="Canceled" ColumnName="Canceled" />
+          <ScalarProperty Name="CheckedOut" ColumnName="CheckedOut" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="HRSModel1.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="Room_ID" ColumnName="Room_ID" />
+          <ScalarProperty Name="ID_Hotel" ColumnName="ID_Hotel" />
+          <ScalarProperty Name="RoomNr" ColumnName="RoomNr" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomFeatures">
+      <EntityTypeMapping TypeName="HRSModel1.RoomFeature">
+        <MappingFragment StoreEntitySet="RoomFeature">
+          <ScalarProperty Name="RoomFeature_ID" ColumnName="RoomFeature_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TravelOffices">
+      <EntityTypeMapping TypeName="HRSModel1.TravelOffice">
+        <MappingFragment StoreEntitySet="TravelOffice">
+          <ScalarProperty Name="TravelOffice_ID" ColumnName="TravelOffice_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="HotelFeatureMapping" TypeName="HRSModel1.HotelFeatureMapping" StoreEntitySet="HotelFeatureMapping">
+      <EndProperty Name="Hotel">
+        <ScalarProperty Name="Hotel_ID" ColumnName="ID_Hotel" />
+      </EndProperty>
+      <EndProperty Name="HotelFeature">
+        <ScalarProperty Name="HotelFeature_ID" ColumnName="ID_HotelFeature" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RoomFeatureMapping" TypeName="HRSModel1.RoomFeatureMapping" StoreEntitySet="RoomFeatureMapping">
+      <EndProperty Name="Room">
+        <ScalarProperty Name="Room_ID" ColumnName="ID_Room" />
+      </EndProperty>
+      <EndProperty Name="RoomFeature">
+        <ScalarProperty Name="RoomFeature_ID" ColumnName="ID_RoomFeature" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

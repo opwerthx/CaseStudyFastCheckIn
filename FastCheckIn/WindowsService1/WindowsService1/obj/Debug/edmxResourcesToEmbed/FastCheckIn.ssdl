@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRSModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="ApplRights">
+    <Key>
+      <PropertyRef Name="Right_ID" />
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="Right_ID" Type="int" Nullable="false" />
+    <Property Name="ID_User" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ApplSettings">
+    <Key>
+      <PropertyRef Name="Settings_ID" />
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="Settings_ID" Type="int" Nullable="false" />
+    <Property Name="ID_User" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ApplUsers">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="User" Type="varchar" MaxLength="10" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="DateofBirth" Type="date" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Street" Type="varchar" MaxLength="100" />
+    <Property Name="Zip" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CreditCard">
+    <Key>
+      <PropertyRef Name="ID_Guest" />
+      <PropertyRef Name="CardNr" />
+    </Key>
+    <Property Name="ID_Guest" Type="int" Nullable="false" />
+    <Property Name="CardNr" Type="bigint" Nullable="false" />
+    <Property Name="CardHolder" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CardType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CVCCode" Type="smallint" Nullable="false" />
+    <Property Name="ExpirationDate" Type="date" />
+    <Property Name="User" Type="varchar" MaxLength="10" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Guest">
+    <Key>
+      <PropertyRef Name="Guest_ID" />
+    </Key>
+    <Property Name="Guest_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="DateofBirth" Type="date" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Street" Type="varchar" MaxLength="100" />
+    <Property Name="Zip" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="User" Type="varchar" MaxLength="10" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Hotel_ID" />
+    </Key>
+    <Property Name="Hotel_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Street" Type="varchar" MaxLength="100" />
+    <Property Name="Zip" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="Stars" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="HotelFeature">
+    <Key>
+      <PropertyRef Name="HotelFeature_ID" />
+    </Key>
+    <Property Name="HotelFeature_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="HotelFeatureMapping">
+    <Key>
+      <PropertyRef Name="ID_Hotel" />
+      <PropertyRef Name="ID_HotelFeature" />
+    </Key>
+    <Property Name="ID_Hotel" Type="int" Nullable="false" />
+    <Property Name="ID_HotelFeature" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="ID_Reservation" />
+      <PropertyRef Name="ID_Guest" />
+      <PropertyRef Name="ID_Room" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="ID_Reservation" Type="int" Nullable="false" />
+    <Property Name="ID_Guest" Type="int" Nullable="false" />
+    <Property Name="ID_Room" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Location" Type="tinyint" />
+    <Property Name="Service" Type="tinyint" />
+    <Property Name="Rating" Type="varchar" MaxLength="500" />
+    <Property Name="User" Type="varchar" MaxLength="10" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="Reservation_ID" />
+    </Key>
+    <Property Name="Reservation_ID" Type="int" Nullable="false" />
+    <Property Name="ID_Room" Type="int" />
+    <Property Name="ID_Guest" Type="int" />
+    <Property Name="ID_TravelOffice" Type="int" />
+    <Property Name="ID_Hotel" Type="int" />
+    <Property Name="DateCheckIn" Type="datetime" />
+    <Property Name="DataCheckOut" Type="datetime" />
+    <Property Name="Canceled" Type="bit" />
+    <Property Name="CheckedOut" Type="bit" />
+    <Property Name="Price" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="User" Type="varchar" MaxLength="10" />
+    <Property Name="Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="Room_ID" />
+    </Key>
+    <Property Name="Room_ID" Type="int" Nullable="false" />
+    <Property Name="ID_Hotel" Type="int" />
+    <Property Name="RoomNr" Type="varchar" MaxLength="100" />
+    <Property Name="Floor" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="RoomFeature">
+    <Key>
+      <PropertyRef Name="RoomFeature_ID" />
+    </Key>
+    <Property Name="RoomFeature_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RoomFeatureMapping">
+    <Key>
+      <PropertyRef Name="ID_Room" />
+      <PropertyRef Name="ID_RoomFeature" />
+    </Key>
+    <Property Name="ID_Room" Type="int" Nullable="false" />
+    <Property Name="ID_RoomFeature" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TravelOffice">
+    <Key>
+      <PropertyRef Name="TravelOffice_ID" />
+    </Key>
+    <Property Name="TravelOffice_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Street" Type="varchar" MaxLength="100" />
+    <Property Name="Zip" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_ApplRights_ApplUsers">
+    <End Role="ApplUsers" Type="Self.ApplUsers" Multiplicity="1" />
+    <End Role="ApplRights" Type="Self.ApplRights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplUsers">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="ApplRights">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplSettings_ApplUsers">
+    <End Role="ApplUsers" Type="Self.ApplUsers" Multiplicity="1" />
+    <End Role="ApplSettings" Type="Self.ApplSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplUsers">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="ApplSettings">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CreditCard_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
+    <End Role="CreditCard" Type="Self.CreditCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Guest_ID" />
+      </Principal>
+      <Dependent Role="CreditCard">
+        <PropertyRef Name="ID_Guest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HotelFeatureMapping_Hotel">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="HotelFeatureMapping" Type="Self.HotelFeatureMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="Hotel_ID" />
+      </Principal>
+      <Dependent Role="HotelFeatureMapping">
+        <PropertyRef Name="ID_Hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HotelFeatureMapping_HotelFeature">
+    <End Role="HotelFeature" Type="Self.HotelFeature" Multiplicity="1" />
+    <End Role="HotelFeatureMapping" Type="Self.HotelFeatureMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HotelFeature">
+        <PropertyRef Name="HotelFeature_ID" />
+      </Principal>
+      <Dependent Role="HotelFeatureMapping">
+        <PropertyRef Name="ID_HotelFeature" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Guest_ID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="ID_Guest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="Reservation_ID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="ID_Reservation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Guest_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_Guest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Hotel">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="Hotel_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_Hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Room_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_TravelOffice">
+    <End Role="TravelOffice" Type="Self.TravelOffice" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TravelOffice">
+        <PropertyRef Name="TravelOffice_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_TravelOffice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomFeatureMapping_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="RoomFeatureMapping" Type="Self.RoomFeatureMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Room_ID" />
+      </Principal>
+      <Dependent Role="RoomFeatureMapping">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomFeatureMapping_RoomFeature">
+    <End Role="RoomFeature" Type="Self.RoomFeature" Multiplicity="1" />
+    <End Role="RoomFeatureMapping" Type="Self.RoomFeatureMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomFeature">
+        <PropertyRef Name="RoomFeature_ID" />
+      </Principal>
+      <Dependent Role="RoomFeatureMapping">
+        <PropertyRef Name="ID_RoomFeature" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRSModel1StoreContainer">
+    <EntitySet Name="ApplRights" EntityType="Self.ApplRights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplSettings" EntityType="Self.ApplSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplUsers" EntityType="Self.ApplUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CreditCard" EntityType="Self.CreditCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotelFeature" EntityType="Self.HotelFeature" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotelFeatureMapping" EntityType="Self.HotelFeatureMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomFeature" EntityType="Self.RoomFeature" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomFeatureMapping" EntityType="Self.RoomFeatureMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TravelOffice" EntityType="Self.TravelOffice" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ApplRights_ApplUsers" Association="Self.FK_ApplRights_ApplUsers">
+      <End Role="ApplUsers" EntitySet="ApplUsers" />
+      <End Role="ApplRights" EntitySet="ApplRights" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplSettings_ApplUsers" Association="Self.FK_ApplSettings_ApplUsers">
+      <End Role="ApplUsers" EntitySet="ApplUsers" />
+      <End Role="ApplSettings" EntitySet="ApplSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CreditCard_Guest" Association="Self.FK_CreditCard_Guest">
+      <End Role="Guest" EntitySet="Guest" />
+      <End Role="CreditCard" EntitySet="CreditCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HotelFeatureMapping_Hotel" Association="Self.FK_HotelFeatureMapping_Hotel">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="HotelFeatureMapping" EntitySet="HotelFeatureMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HotelFeatureMapping_HotelFeature" Association="Self.FK_HotelFeatureMapping_HotelFeature">
+      <End Role="HotelFeature" EntitySet="HotelFeature" />
+      <End Role="HotelFeatureMapping" EntitySet="HotelFeatureMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Guest" Association="Self.FK_Rating_Guest">
+      <End Role="Guest" EntitySet="Guest" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Reservation" Association="Self.FK_Rating_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Guest" Association="Self.FK_Reservation_Guest">
+      <End Role="Guest" EntitySet="Guest" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Hotel" Association="Self.FK_Reservation_Hotel">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Room" Association="Self.FK_Reservation_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_TravelOffice" Association="Self.FK_Reservation_TravelOffice">
+      <End Role="TravelOffice" EntitySet="TravelOffice" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomFeatureMapping_Room" Association="Self.FK_RoomFeatureMapping_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="RoomFeatureMapping" EntitySet="RoomFeatureMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomFeatureMapping_RoomFeature" Association="Self.FK_RoomFeatureMapping_RoomFeature">
+      <End Role="RoomFeature" EntitySet="RoomFeature" />
+      <End Role="RoomFeatureMapping" EntitySet="RoomFeatureMapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

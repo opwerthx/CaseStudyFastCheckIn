@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRSModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="ApplRight">
+    <Key>
+      <PropertyRef Name="Right_ID" />
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="Right_ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_User" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ApplUser" Relationship="Self.FK_ApplRights_ApplUsers" FromRole="ApplRights" ToRole="ApplUsers" />
+  </EntityType>
+  <EntityType Name="ApplSetting">
+    <Key>
+      <PropertyRef Name="Settings_ID" />
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="Settings_ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_User" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ApplUser" Relationship="Self.FK_ApplSettings_ApplUsers" FromRole="ApplSettings" ToRole="ApplUsers" />
+  </EntityType>
+  <EntityType Name="ApplUser">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ApplRights" Relationship="Self.FK_ApplRights_ApplUsers" FromRole="ApplUsers" ToRole="ApplRights" />
+    <NavigationProperty Name="ApplSettings" Relationship="Self.FK_ApplSettings_ApplUsers" FromRole="ApplUsers" ToRole="ApplSettings" />
+  </EntityType>
+  <EntityType Name="CreditCard">
+    <Key>
+      <PropertyRef Name="ID_Guest" />
+      <PropertyRef Name="CardNr" />
+    </Key>
+    <Property Name="ID_Guest" Type="Int32" Nullable="false" />
+    <Property Name="CardNr" Type="Int64" Nullable="false" />
+    <Property Name="CardHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CardType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CVCCode" Type="Int16" Nullable="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Precision="0" />
+    <Property Name="User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Guest" Relationship="Self.FK_CreditCard_Guest" FromRole="CreditCard" ToRole="Guest" />
+  </EntityType>
+  <EntityType Name="Guest">
+    <Key>
+      <PropertyRef Name="Guest_ID" />
+    </Key>
+    <Property Name="Guest_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CreditCards" Relationship="Self.FK_CreditCard_Guest" FromRole="Guest" ToRole="CreditCard" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Guest" FromRole="Guest" ToRole="Rating" />
+    <NavigationProperty Name="Reservations" Relationship="Self.FK_Reservation_Guest" FromRole="Guest" ToRole="Reservation" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Hotel_ID" />
+    </Key>
+    <Property Name="Hotel_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Stars" Type="Byte" />
+    <NavigationProperty Name="Reservations" Relationship="Self.FK_Reservation_Hotel" FromRole="Hotel" ToRole="Reservation" />
+    <NavigationProperty Name="HotelFeatures" Relationship="Self.HotelFeatureMapping" FromRole="Hotel" ToRole="HotelFeature" />
+  </EntityType>
+  <EntityType Name="HotelFeature">
+    <Key>
+      <PropertyRef Name="HotelFeature_ID" />
+    </Key>
+    <Property Name="HotelFeature_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Hotels" Relationship="Self.HotelFeatureMapping" FromRole="HotelFeature" ToRole="Hotel" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="ID_Reservation" />
+      <PropertyRef Name="ID_Guest" />
+      <PropertyRef Name="ID_Room" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="ID_Reservation" Type="Int32" Nullable="false" />
+    <Property Name="ID_Guest" Type="Int32" Nullable="false" />
+    <Property Name="ID_Room" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Location" Type="Byte" />
+    <Property Name="Service" Type="Byte" />
+    <Property Name="Rating1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Guest" Relationship="Self.FK_Rating_Guest" FromRole="Rating" ToRole="Guest" />
+    <NavigationProperty Name="Reservation" Relationship="Self.FK_Rating_Reservation" FromRole="Rating" ToRole="Reservation" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="Reservation_ID" />
+    </Key>
+    <Property Name="Reservation_ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_Room" Type="Int32" />
+    <Property Name="ID_Guest" Type="Int32" />
+    <Property Name="ID_TravelOffice" Type="Int32" />
+    <Property Name="ID_Hotel" Type="Int32" />
+    <Property Name="DateCheckIn" Type="DateTime" Precision="3" />
+    <Property Name="DataCheckOut" Type="DateTime" Precision="3" />
+    <Property Name="Canceled" Type="Boolean" />
+    <Property Name="CheckedOut" Type="Boolean" />
+    <Property Name="Price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Guest" Relationship="Self.FK_Reservation_Guest" FromRole="Reservation" ToRole="Guest" />
+    <NavigationProperty Name="Hotel" Relationship="Self.FK_Reservation_Hotel" FromRole="Reservation" ToRole="Hotel" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Reservation" FromRole="Reservation" ToRole="Rating" />
+    <NavigationProperty Name="Room" Relationship="Self.FK_Reservation_Room" FromRole="Reservation" ToRole="Room" />
+    <NavigationProperty Name="TravelOffice" Relationship="Self.FK_Reservation_TravelOffice" FromRole="Reservation" ToRole="TravelOffice" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="Room_ID" />
+    </Key>
+    <Property Name="Room_ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_Hotel" Type="Int32" />
+    <Property Name="RoomNr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Floor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Reservations" Relationship="Self.FK_Reservation_Room" FromRole="Room" ToRole="Reservation" />
+    <NavigationProperty Name="RoomFeatures" Relationship="Self.RoomFeatureMapping" FromRole="Room" ToRole="RoomFeature" />
+  </EntityType>
+  <EntityType Name="RoomFeature">
+    <Key>
+      <PropertyRef Name="RoomFeature_ID" />
+    </Key>
+    <Property Name="RoomFeature_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Rooms" Relationship="Self.RoomFeatureMapping" FromRole="RoomFeature" ToRole="Room" />
+  </EntityType>
+  <EntityType Name="TravelOffice">
+    <Key>
+      <PropertyRef Name="TravelOffice_ID" />
+    </Key>
+    <Property Name="TravelOffice_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Reservations" Relationship="Self.FK_Reservation_TravelOffice" FromRole="TravelOffice" ToRole="Reservation" />
+  </EntityType>
+  <Association Name="FK_ApplRights_ApplUsers">
+    <End Role="ApplUsers" Type="Self.ApplUser" Multiplicity="1" />
+    <End Role="ApplRights" Type="Self.ApplRight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplUsers">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="ApplRights">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplSettings_ApplUsers">
+    <End Role="ApplUsers" Type="Self.ApplUser" Multiplicity="1" />
+    <End Role="ApplSettings" Type="Self.ApplSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplUsers">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="ApplSettings">
+        <PropertyRef Name="ID_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CreditCard_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
+    <End Role="CreditCard" Type="Self.CreditCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Guest_ID" />
+      </Principal>
+      <Dependent Role="CreditCard">
+        <PropertyRef Name="ID_Guest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Guest_ID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="ID_Guest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Guest_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_Guest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Hotel">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="Hotel_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_Hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="Reservation_ID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="ID_Reservation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Room_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_Room" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_TravelOffice">
+    <End Role="TravelOffice" Type="Self.TravelOffice" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TravelOffice">
+        <PropertyRef Name="TravelOffice_ID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="ID_TravelOffice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HotelFeatureMapping">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="*" />
+    <End Role="HotelFeature" Type="Self.HotelFeature" Multiplicity="*" />
+  </Association>
+  <Association Name="RoomFeatureMapping">
+    <End Role="Room" Type="Self.Room" Multiplicity="*" />
+    <End Role="RoomFeature" Type="Self.RoomFeature" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="CheckInFastEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ApplRights" EntityType="Self.ApplRight" />
+    <EntitySet Name="ApplSettings" EntityType="Self.ApplSetting" />
+    <EntitySet Name="ApplUsers" EntityType="Self.ApplUser" />
+    <EntitySet Name="CreditCards" EntityType="Self.CreditCard" />
+    <EntitySet Name="Guests" EntityType="Self.Guest" />
+    <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+    <EntitySet Name="HotelFeatures" EntityType="Self.HotelFeature" />
+    <EntitySet Name="Ratings" EntityType="Self.Rating" />
+    <EntitySet Name="Reservations" EntityType="Self.Reservation" />
+    <EntitySet Name="Rooms" EntityType="Self.Room" />
+    <EntitySet Name="RoomFeatures" EntityType="Self.RoomFeature" />
+    <EntitySet Name="TravelOffices" EntityType="Self.TravelOffice" />
+    <AssociationSet Name="FK_ApplRights_ApplUsers" Association="Self.FK_ApplRights_ApplUsers">
+      <End Role="ApplUsers" EntitySet="ApplUsers" />
+      <End Role="ApplRights" EntitySet="ApplRights" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplSettings_ApplUsers" Association="Self.FK_ApplSettings_ApplUsers">
+      <End Role="ApplUsers" EntitySet="ApplUsers" />
+      <End Role="ApplSettings" EntitySet="ApplSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CreditCard_Guest" Association="Self.FK_CreditCard_Guest">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="CreditCard" EntitySet="CreditCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Guest" Association="Self.FK_Rating_Guest">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Guest" Association="Self.FK_Reservation_Guest">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="Reservation" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Hotel" Association="Self.FK_Reservation_Hotel">
+      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="Reservation" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Reservation" Association="Self.FK_Rating_Reservation">
+      <End Role="Reservation" EntitySet="Reservations" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Room" Association="Self.FK_Reservation_Room">
+      <End Role="Room" EntitySet="Rooms" />
+      <End Role="Reservation" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_TravelOffice" Association="Self.FK_Reservation_TravelOffice">
+      <End Role="TravelOffice" EntitySet="TravelOffices" />
+      <End Role="Reservation" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="HotelFeatureMapping" Association="Self.HotelFeatureMapping">
+      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="HotelFeature" EntitySet="HotelFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="RoomFeatureMapping" Association="Self.RoomFeatureMapping">
+      <End Role="Room" EntitySet="Rooms" />
+      <End Role="RoomFeature" EntitySet="RoomFeatures" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

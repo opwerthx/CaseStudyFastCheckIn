@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>WIN-580PH9PAG02</Machine>
+    <WindowsUser>Tim Arnold</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>e3824050-f46c-45ec-a43f-21b4dda6cca1</PackageIdentityName>
+    <IntermediateOutputPath>C:\workspace\FastCheckIn\FastCheckIn\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>C69358C40DFD3267D922302F0686891F48B26CCEA557578898151FB2E1C0195C</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>e3824050-f46c-45ec-a43f-21b4dda6cca1_1.0.0.0_neutral__d6qc9sz0wrfmy</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>e3824050-f46c-45ec-a43f-21b4dda6cca1_d6qc9sz0wrfmy!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>e3824050-f46c-45ec-a43f-21b4dda6cca1</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Tim Arnold</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-09-02T23:20:31.631</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\FastCheckIn.exe">
+      <PackagePath>FastCheckIn.exe</PackagePath>
+      <Modified>2014-09-02T23:20:31.431</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\DataModel\SampleData.json">
+      <PackagePath>DataModel\SampleData.json</PackagePath>
+      <Modified>2014-09-02T20:20:39.046</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\Assets\LightGray.png">
+      <PackagePath>Assets\LightGray.png</PackagePath>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\Assets\MediumGray.png">
+      <PackagePath>Assets\MediumGray.png</PackagePath>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\Assets\DarkGray.png">
+      <PackagePath>Assets\DarkGray.png</PackagePath>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-09-02T23:20:31.119</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\BlankPage1.xbf">
+      <PackagePath>BlankPage1.xbf</PackagePath>
+      <Modified>2014-09-02T23:20:31.120</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\GroupedItemsPage.xbf">
+      <PackagePath>GroupedItemsPage.xbf</PackagePath>
+      <Modified>2014-09-02T23:20:31.122</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\GroupDetailPage.xbf">
+      <PackagePath>GroupDetailPage.xbf</PackagePath>
+      <Modified>2014-09-02T23:20:31.128</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\ItemDetailPage.xbf">
+      <PackagePath>ItemDetailPage.xbf</PackagePath>
+      <Modified>2014-09-02T23:20:31.129</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\FastCheckIn.xr.xml">
+      <PackagePath>FastCheckIn.xr.xml</PackagePath>
+      <Modified>2014-09-02T23:09:21.762</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\FastCheckIn\FastCheckIn\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-09-02T23:20:31.558</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

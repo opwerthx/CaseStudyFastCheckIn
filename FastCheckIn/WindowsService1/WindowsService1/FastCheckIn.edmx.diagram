@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="53bc60e07c7b46e09120335f1cc1039a" Name="Diagram1">
+        <EntityTypeShape EntityType="HRSModel1.ApplRight" Width="1.5" PointX="11" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.ApplSetting" Width="1.5" PointX="11" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.ApplUser" Width="1.5" PointX="8.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.CreditCard" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.Guest" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.Hotel" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.HotelFeature" Width="1.5" PointX="4.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.Rating" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.Reservation" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.Room" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.RoomFeature" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRSModel1.TravelOffice" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="HRSModel1.FK_ApplRights_ApplUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_ApplSettings_ApplUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_CreditCard_Guest" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_Rating_Guest" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_Reservation_Guest" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_Reservation_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_Rating_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_Reservation_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.FK_Reservation_TravelOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.HotelFeatureMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="HRSModel1.RoomFeatureMapping" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
